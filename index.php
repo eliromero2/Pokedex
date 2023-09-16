@@ -1,4 +1,5 @@
 <?php
+include_once 'lib/mysql.php';
 include_once 'header.php';
 ?>
 <!doctype html>
