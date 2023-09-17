@@ -17,6 +17,7 @@ class MySQLDatabase {
 
     public function connect() {
         $this->connection = mysqli_connect($this->host, $this->username, $this->password, $this->database);
+        mysqli_set_charset($this->connection, "utf8");
         if (!$this->connection) {
             die("Connection failed: " . mysqli_connect_error());
         }
@@ -24,6 +25,10 @@ class MySQLDatabase {
 
     public function disconnect() {
         mysqli_close($this->connection);
+    }
+
+    public function getConnection() {
+        return $this->connection;
     }
 
     public function query($sql) {
@@ -44,7 +49,12 @@ class MySQLDatabase {
         $this->disconnect();
 
         return $rows;
+    }
 
-        
+    public function fetchOne($sql) {
+        $result = $this->query($sql);
+        $row = mysqli_fetch_assoc($result);
+        $this->disconnect();
+        return $row;
     }
 }

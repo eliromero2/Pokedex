@@ -27,19 +27,19 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>
-
         <?php 
-        foreach($pokemones as $pokemon){
-            include 'components/tableRow.php';
-        }
+            foreach($pokemones as $pokemon){
+                include 'components/tableRow.php';
+            }
         ?>
-  
+
   </tbody>
 </table>
     </div>
