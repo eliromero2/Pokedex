@@ -4,7 +4,7 @@ session_start();
 include_once 'lib/mysql.php';
 include_once 'header.php';
 
-$db = new MySQLDatabase('localhost', 'root', 'example', 'pokedex');
+$db = new MySQLDatabase('localhost', 'root', '', 'pokedex');
 $pokemones = $db->fetchAll('select * from pokemon');
 
 if( isset($_POST["usuario"] )){
@@ -22,7 +22,7 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
        <button class="btn btn-outline-success" type="submit">Search</button>
    </form>
 
-<a href="/Pokedex/create.php" class="btn btn-info">Agregar Pokemon</a>
+<a href="/Pokedex/create.php" class="btn btn-info shadow p-3 mb-5 bg-body-tertiary rounded">Agregar Pokemon</a>
 
 <div class="row">
     <div class="col">
