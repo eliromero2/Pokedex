@@ -27,6 +27,7 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
 
     <div class="row">
         <div class="col">
+
             <table class="table">
 
                 <tbody>
@@ -39,8 +40,13 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
                 ?>
 
                 </tbody>
+
             </table>
+              </div>
+        <div class="d-flex justify-content-center">
+            <a href= home.php class="btn btn-primary mx-2 shadow p-3 mb-5 rounded text-wrap ">volver al listado</a>
         </div>
+
     </div>
 
 </div>
