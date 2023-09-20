@@ -7,11 +7,11 @@ class MySQLDatabase {
     private $database;
     private $connection;
 
-    public function __construct($host, $username, $password, $database) {
-        $this->host = $host;
-        $this->username = $username;
-        $this->password = $password;
-        $this->database = $database;
+    public function __construct() {
+        $this->host = 'localhost';
+        $this->username = 'root';
+        $this->password = 'example';
+        $this->database = 'pokedex';
         $this->connect();
     }
 

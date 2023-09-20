@@ -1,7 +1,7 @@
 <?php
 include_once 'mysql.php';
 
-$db = new MySQLDatabase('localhost', 'root', '', 'pokedex');
+$db = new MySQLDatabase();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $descripcion = $_POST['descripcion'];
     $peso = $_POST['weight'];
     $altura = $_POST['height'];
+    $nro_identificador = $_POST['numero_identificador'];
 
     // Procesar la imagen
     $imagen = $_FILES['formFile']['name'];
@@ -19,11 +20,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imagen_path ='imagenes/' . $imagen;
     move_uploaded_file($ruta_temporal, $ruta_destino);
 
-    // Actualizar el registro del Pokemon
-    $sql = "UPDATE pokemon SET nombre = ?, habitad = ?, tipo = ?, descripcion = ?, peso = ?, altura = ?, imagen_path = ? WHERE id = ?";
-    $stmt = $db->getConnection()->prepare($sql);
-    $stmt->bind_param('sssssssi', $nombre, $habitad, $tipo, $descripcion, $peso, $altura, $imagen_path, $id);
-    $stmt->execute();
+     // Actualizar el registro del Pokemon
+     $sql = "UPDATE pokemon SET nombre = ?, habitad = ?, tipo = ?, descripcion = ?, peso = ?, altura = ?, numero_identificador = ?";
+
+     if($imagen){
+         $sql .= ", imagen_path = ?";
+     }
+ 
+     $sql .= " WHERE id = ?";
+     $stmt = $db->getConnection()->prepare($sql);
+ 
+     if($imagen){
+         $stmt->bind_param('ssssssssi', $nombre, $habitad, $tipo, $descripcion, $peso, $altura, $imagen_path, $nro_identificador, $id);
+     } else {
+         $stmt->bind_param('sssssssi', $nombre, $habitad, $tipo, $descripcion, $peso, $altura, $nro_identificador, $id);
+     }
+
+ 
+     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
         echo json_encode(['status' => 'success']);

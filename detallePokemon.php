@@ -4,7 +4,7 @@ session_start();
 include_once 'lib/mysql.php';
 include_once 'header.php';
 $pokemonDetalle= $_GET["nombre"];
-$db = new MySQLDatabase('localhost', 'root', '', 'pokedex');
+$db = new MySQLDatabase();
 
 $pokemones = $db->fetchAll("SELECT * FROM pokemon WHERE nombre = '$pokemonDetalle'");
 

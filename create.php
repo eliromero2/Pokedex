@@ -1,7 +1,7 @@
 <?php 
     include_once 'header.php'; 
     include_once 'lib/mysql.php';    
-    $db = new MySQLDatabase('localhost', 'root', 'example', 'pokedex');
+    $db = new MySQLDatabase();
     $types = array("Fuego", "Agua", "Planta", "Eléctrico", "Hielo", "Tierra", "Volador", "Psíquico", "Lucha", "Veneno", "Roca", "Bicho", "Fantasma", "Dragón", "Siniestro", "Acero", "Hada");
 
 ?>
@@ -13,6 +13,10 @@
             <div class="col-12">
                 <label for="formFile" class="form-label">Imagen</label>
                 <input class="form-control" type="file" id="formFile" name="formFile">
+            </div>
+            <div class="col-md-6">
+                <label for="numero_identificador" class="form-label">Numero Pokemon</label>
+                <input type="text" class="form-control" name='numero_identificador' id="numero_identificador">
             </div>
             <div class="col-md-6">
                 <label for="name" class="form-label">Nombre</label>
