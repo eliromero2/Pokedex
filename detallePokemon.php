@@ -16,19 +16,12 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
 
 ?>
 
-<div class="container">
-
-    <form class="d-flex my-5" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-
-
+<div class="container bg-dark p-3">
 
     <div class="row">
         <div class="col">
 
-            <table class="table">
+            <div>
 
                 <tbody>
                 <?php
@@ -41,7 +34,7 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
 
                 </tbody>
 
-            </table>
+            </div>
               </div>
         <div class="d-flex justify-content-center">
             <a href= home.php class="btn btn-primary mx-2 shadow p-3 mb-5 rounded text-wrap ">volver al listado</a>

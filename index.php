@@ -17,7 +17,7 @@ $pokemones = $db->fetchAll('select * from pokemon');
    
     <title>Inicio</title>
 </head>
-<body>
+<body >
 <form action="inicioSesion.php" method="post">
     <label for="usuario">Usuario: </label>
     <input type="text" name="usuario" id="usuario" required>
@@ -60,3 +60,4 @@ $pokemones = $db->fetchAll('select * from pokemon');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+

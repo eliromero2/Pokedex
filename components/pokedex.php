@@ -68,10 +68,10 @@
 
 
 
-        <div id="bg_curve1_right"></div>
+        <div id="bg_curve1_right" class="bg-dark p-3"></div>
         <div id="bg_curve2_right"></div>
         <div id="curve1_right"></div>
-        <div id="curve2_right"></div>
+        <div id="curve2_right" class="bg-dark p-3"> </div>
     </div>
 </div>
 
