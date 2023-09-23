@@ -32,6 +32,7 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
       <th scope="col">#</th>
       <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
+      <th scope="col">Tipo</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Acciones</th>
     </tr>
