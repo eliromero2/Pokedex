@@ -1,7 +1,7 @@
 <?php
 include_once 'mysql.php';
 
-$db = new MySQLDatabase('localhost', 'root', '', 'pokedex');
+$db = new MySQLDatabase();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['name'];

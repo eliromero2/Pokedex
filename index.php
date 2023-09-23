@@ -2,7 +2,7 @@
 include_once 'lib/mysql.php';
 include_once 'header.php';
 
-$db = new MySQLDatabase('localhost', 'root', '', 'pokedex');
+$db = new MySQLDatabase();
 $pokemones = $db->fetchAll('select * from pokemon');
 
 
