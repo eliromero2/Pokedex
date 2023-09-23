@@ -17,6 +17,7 @@ $resultados = $db->fetchAll($sql);
         <th scope="col">Numero</th>
         <th scope="col">Imagen</th>
         <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
         <th scope="col">Descripcion</th>
     </tr>
     </thead>

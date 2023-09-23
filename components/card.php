@@ -10,6 +10,7 @@
      <div class="card-body bg-body-tertiary">
     <h5 class="card-title"><?php echo $pokemon["nombre"] ?></h5>
     <p class="card-text"><?php echo $pokemon["descripcion"] ?></p>
+    <p class="card-text"><?php echo $pokemon["tipo"] ?></p>
       <p class="badge bg-primary text-wrap" style="width: 6rem;"># <?php echo $pokemon["id"] ?> </p>
 
 
