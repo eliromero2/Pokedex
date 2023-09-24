@@ -1,7 +1,6 @@
 <?php 
 $urlEdit = "/Pokedex/edit.php?id=".$pokemon["numero_identificador"];
 $urlImgType = "imagenes/tipos/".$pokemon["tipo"].".jpg";
-
 ?>
 
 <tr>
@@ -14,7 +13,7 @@ $urlImgType = "imagenes/tipos/".$pokemon["tipo"].".jpg";
 
   
   <?php 
-  if($_SESSION['usuario']){
+  if(isset($_SESSION['usuario'])){
     echo '<td class="d-flex ">
     <a href='.$urlEdit.' class="btn btn-primary mx-2">Modificar</a>
     <a href="" class="btn btn-danger">Borrar</a>

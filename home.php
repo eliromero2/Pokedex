@@ -9,9 +9,9 @@ $pokemones = $db->fetchAll('select * from pokemon');
 
 if( isset($_POST["usuario"] )){
     $_SESSION["usuario"] = $_POST["usuario"];
+    echo "hola " . $_SESSION["usuario"]  .  "!";
 }
 
-echo "hola " . $_SESSION["usuario"]  .  "!";
 
 ?>
 
@@ -34,7 +34,12 @@ echo "hola " . $_SESSION["usuario"]  .  "!";
       <th scope="col">Nombre</th>
       <th scope="col">Tipo</th>
       <th scope="col">Descripcion</th>
-      <th scope="col">Acciones</th>
+      <?php 
+      if(isset($_SESSION['usuario'])){
+        echo '<th scope="col">Acciones</th>';
+
+      }
+      ?>
     </tr>
   </thead>
   <tbody>
