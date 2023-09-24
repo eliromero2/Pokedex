@@ -23,10 +23,8 @@ $pokemones = $db->fetchAll('select * from pokemon');
 
 <div class="container">
 
-    <form class="d-flex my-5" role="search" method="GET" action="buscarPokemon.php">
-        <input class="form-control me-2" type="search" id="busqueda" name="busqueda">
-        <input class="btn btn-outline-success"  type="submit" value="Buscar">
-    </form>
+    
+<?php include_once 'components/search.php' ?>
 
     <div class="row">
     <div class="col">
@@ -51,13 +49,6 @@ $pokemones = $db->fetchAll('select * from pokemon');
         </table>
     </div>
 </div>
-    <?php
-    if (isset($_SESSION["usuario"])) {
-        echo '<div class="d-flex justify-content-center my-5 btn btn-outline-danger">';
-        echo '<a href="cierroSesion.php" class="d-block">Cerrar sesion</a>';
-        echo '</div>';
-    }
-    ?>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

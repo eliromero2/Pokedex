@@ -8,12 +8,6 @@ $db = new MySQLDatabase();
 
 $pokemones = $db->fetchAll("SELECT * FROM pokemon WHERE nombre = '$pokemonDetalle'");
 
-if( isset($_POST["usuario"] )){
-    $_SESSION["usuario"] = $_POST["usuario"];
-}
-
-echo "hola " . $_SESSION["usuario"]  .  "!";
-
 ?>
 
 <div class="container bg-dark p-3">

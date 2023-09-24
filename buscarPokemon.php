@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'lib/mysql.php';
 include_once 'header.php';
 
@@ -6,7 +7,7 @@ $db = new MySQLDatabase();
 
 $busqueda = $_GET['busqueda'];
 
-$sql = "SELECT * FROM pokemon WHERE nombre LIKE '%$busqueda%' OR tipo LIKE '%$busqueda%'";
+$sql = "SELECT * FROM pokemon WHERE nombre LIKE '$busqueda%'";
 
 $resultados = $db->fetchAll($sql);
 
@@ -23,6 +24,11 @@ $resultados = $db->fetchAll($sql);
         <th scope="col">Nombre</th>
         <th scope="col">Tipo</th>
         <th scope="col">Descripcion</th>
+        <?php 
+      if(isset($_SESSION['usuario'])){
+        echo '<th scope="col">Acciones</th>';
+      }
+      ?>
     </tr>
     </thead>
     <tbody>
@@ -30,7 +36,7 @@ $resultados = $db->fetchAll($sql);
     if (!empty($resultados)) {
 
         foreach ($resultados as $pokemon) {
-            include 'components/tableRowSinBoton.php';
+            include 'components/tableRow.php';
         }
     }
     ?>

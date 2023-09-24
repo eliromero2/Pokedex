@@ -1,6 +1,6 @@
 <?php
 $urlEdit = "/Pokedex/edit.php?id=".$pokemon["numero_identificador"];
-$urlImgType = "../imagenes/tipos/".$pokemon["tipo"];
+$urlImgType = "imagenes/tipos/".$pokemon["tipo"].".jpg";
 ?>
 
 <tr>

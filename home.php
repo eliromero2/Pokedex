@@ -19,16 +19,14 @@ if (!isset($_SESSION["usuario"])) {
 
 <div class="container">
     <h2 class="my-3"><?php echo "Bienvenido " . $_SESSION["usuario"]  .  "!"; ?></h2>
-<form class="d-flex my-5" role="search">
-       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-       <button class="btn btn-outline-success" type="submit">Search</button>
-   </form>
+    <?php include_once 'components/search.php' ?>
+
 
 <a href="/Pokedex/create.php" class="btn btn-info shadow p-3 mb-5 bg-body-tertiary rounded">Agregar Pokemon</a>
 
 <div class="row">
     <div class="col">
-    <table class="table">
+    <table class="table table-responsive">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -39,7 +37,6 @@ if (!isset($_SESSION["usuario"])) {
       <?php 
       if(isset($_SESSION['usuario'])){
         echo '<th scope="col">Acciones</th>';
-
       }
       ?>
     </tr>

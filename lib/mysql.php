@@ -57,4 +57,14 @@ class MySQLDatabase {
         $this->disconnect();
         return $row;
     }
+
+    public function deletePokemon($id) {
+        $sql = "DELETE FROM pokemon WHERE numero_identificador = $id";
+
+        if ($this->query($sql) === TRUE) {
+            return true; // Éxito al eliminar el registro
+        } else {
+            return false; // Error al eliminar el registro
+        }
+    }
 }
