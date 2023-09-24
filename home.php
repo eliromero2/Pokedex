@@ -7,16 +7,18 @@ include_once 'header.php';
 $db = new MySQLDatabase();
 $pokemones = $db->fetchAll('select * from pokemon');
 
-if( isset($_POST["usuario"] )){
-    $_SESSION["usuario"] = $_POST["usuario"];
-    echo "hola " . $_SESSION["usuario"]  .  "!";
+
+if (!isset($_SESSION["usuario"])) {
+// Si el usuario no ha iniciado sesión, redirigirlo al formulario de inicio de sesión
+    header("Location: index.php");
+    exit;
 }
 
 
 ?>
 
 <div class="container">
-    
+    <h2 class="my-3"><?php echo "Bienvenido " . $_SESSION["usuario"]  .  "!"; ?></h2>
 <form class="d-flex my-5" role="search">
        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
        <button class="btn btn-outline-success" type="submit">Search</button>
@@ -53,5 +55,6 @@ if( isset($_POST["usuario"] )){
 </table>
     </div>
 </div>
+    <a href="index.php" class="d-flex justify-content-center my-5">Volver al inicio</a>
 
 </div>
