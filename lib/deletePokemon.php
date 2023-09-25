@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION["deletePokemon"] = "Error al eliminar Pokemon";
     }
 
+    $db->disconnect();
     header('Location: /Pokedex/home.php');
     exit();
 }
