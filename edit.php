@@ -10,7 +10,7 @@
     <div class="row">
         <h1>Editar Pokemon <?php echo $pokemon['nombre']; ?></h1>
         <div class="col">
-        <form id="updatePokemon" action="lib/updatePokemon.php" method="post" class="row g-3">
+        <form id="updatePokemon" action="lib/updatePokemon.php" method="post" enctype="multipart/form-data" class="row g-3">
             <input type="hidden" name="id" value=<?php echo $pokemon['id'] ?>>
             <div class="col-12">
                 <label for="formFile" class="form-label">Imagen</label>
