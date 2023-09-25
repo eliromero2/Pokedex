@@ -40,9 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        echo json_encode(['status' => 'success']);
+        setcookie("updatePokemon", "Pokemon Actualizado!", time() + 3600);
     } else {
-        echo json_encode(['status' => 'error']);
+        setcookie("updatePokemon", "Error al actualizar Pokemon", time() + 3600);
     }
+
+    header('Location: /Pokedex/home.php');
+    exit();
 }
 ?>

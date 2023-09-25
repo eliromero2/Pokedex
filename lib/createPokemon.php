@@ -25,9 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        echo json_encode(['status' => 'success']);
+        setcookie("createPokemon", "Pokemon Agregado!", time() + 3600);
     } else {
-        echo json_encode(['status' => 'error']);
+        setcookie("createPokemon", "Error al crear Pokemon", time() + 3600);
     }
+
+    header('Location: /Pokedex/home.php');
+    exit();
 }
 ?>

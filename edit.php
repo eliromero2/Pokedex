@@ -10,7 +10,7 @@
     <div class="row">
         <h1>Editar Pokemon <?php echo $pokemon['nombre']; ?></h1>
         <div class="col">
-        <form id="updatePokemon" class="row g-3">
+        <form id="updatePokemon" action="lib/updatePokemon.php" method="post" class="row g-3">
             <input type="hidden" name="id" value=<?php echo $pokemon['id'] ?>>
             <div class="col-12">
                 <label for="formFile" class="form-label">Imagen</label>
@@ -29,22 +29,11 @@
                 <input type="text" class="form-control" name='habitad' id="habitad" value=<?php echo $pokemon['habitad'] ?>>
             </div>
             <div class="col-md-6">
-                <label for="type1" class="form-label">Primer Tipo</label>
+                <label for="type1" class="form-label">Tipo</label>
                 <select id="type1" class="form-select" name='type1'>
                 <option selected>Seleccione Tipo</option>
                 <?php foreach($types as $type): ?>
                     <option value="<?php echo $type; ?>" <?php if($pokemon['tipo'] == $type) echo 'selected'; ?>>
-                        <?php echo $type; ?>
-                    </option>
-                <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="col-6">
-            <label for="type2" class="form-label">Segundo Tipo</label>
-                <select id="type2" name="type2" class="form-select">
-                <option selected>Seleccione Tipo</option>
-                <?php foreach($types as $type): ?>
-                    <option value="<?php echo $type; ?>">
                         <?php echo $type; ?>
                     </option>
                 <?php endforeach; ?>
@@ -72,19 +61,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    document.getElementById('updatePokemon').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var formData = new FormData(this);
-
-    fetch('lib/updatePokemon.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => window.location.href = 'home.php')
-    .catch((error) => console.error('Error:', error));
-});
-</script>
