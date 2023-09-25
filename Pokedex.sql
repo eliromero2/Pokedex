@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS pokedex;
+USE pokedex;
+
 DROP TABLE IF EXISTS `pokemon`;
 CREATE TABLE `pokemon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
