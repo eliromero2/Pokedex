@@ -28,4 +28,4 @@ CREATE TABLE `users` (
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `users` VALUES (1,'admin','0192023a7bbd73250516f069df18b500');
+INSERT INTO `users` VALUES (1,'admin','0192023a7bbd73250516f069df18b500'); -- pw: admin123
