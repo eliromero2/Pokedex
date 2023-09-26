@@ -20,6 +20,7 @@ if ($hasUser) {
         $_SESSION["usuario"] = $username;
         header("Location: home.php");
     } 
+    
 }else {
     echo'<div class="d-flex flex-column align-items-center justify-content-center my-5">';
     echo '<h3>Credenciales incorrectas</h3>';
@@ -28,19 +29,5 @@ if ($hasUser) {
     echo'<div class="d-flex justify-content-center my-5">';
     echo '<a class=" my-5 btn btn-outline-dark" href="loginForm.php">Volver al formulario</a>';
     echo'</div>';
-} /* else {
-    // Usuario no existe, registrarlo en la base de datos
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-    if (mysqli_query($db->getConnection(), $sql)) {
-        // Registro exitoso, inicia sesión
-        $_SESSION["usuario"] = $username;
-        header("Location: home.php");
-    } else {
-        echo "Error al registrar el usuario: " . mysqli_error($db->getConnection());
-        header("Location: index.php");
-    }
-} */
-
-function validarCampos($username, $password){
-    return !empty($username) && !empty($password);
 }
+

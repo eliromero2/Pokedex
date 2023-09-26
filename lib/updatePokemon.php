@@ -1,5 +1,9 @@
 <?php
 include_once 'mysql.php';
+session_start();
+
+unset($_SESSION["createPokemon"]);
+unset($_SESSION["deletePokemon"]);
 
 $db = new MySQLDatabase();
 
@@ -40,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        setcookie("updatePokemon", "Pokemon Actualizado!", time() + 3600);
+        $_SESSION["updatePokemon"] = "Pokemon Actualizado!";
     } else {
-        setcookie("updatePokemon", "Error al actualizar Pokemon", time() + 3600);
+        $_SESSION["updatePokemon"] = "Error al actualizar Pokemon";
     }
 
     header('Location: /Pokedex/home.php');

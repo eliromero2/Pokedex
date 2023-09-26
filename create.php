@@ -9,22 +9,22 @@
     <div class="row">
         <h1>Crear Nuevo Pokemon</h1>
         <div class="col">
-        <form id="createPokemon" action="lib/createPokemon.php" method="post" class="row g-3">
+        <form id="createPokemon" action="lib/createPokemon.php" method="post" enctype="multipart/form-data" class="row g-3">
             <div class="col-12">
                 <label for="formFile" class="form-label">Imagen</label>
-                <input class="form-control" type="file" id="formFile" name="formFile">
+                <input class="form-control" type="file" id="formFile" name="formFile" required>
             </div>
             <div class="col-md-6">
                 <label for="numero_identificador" class="form-label">Numero Pokemon</label>
-                <input type="text" class="form-control" name='numero_identificador' id="numero_identificador">
+                <input type="text" class="form-control" name='numero_identificador' id="numero_identificador" required>
             </div>
             <div class="col-md-6">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name='name' id="name" >
+                <input type="text" class="form-control" name='name' id="name"  required>
             </div>
             <div class="col-md-6">
                 <label for="habitad" class="form-label">Habitad</label>
-                <input type="text" class="form-control" name='habitad' id="habitad" >
+                <input type="text" class="form-control" name='habitad' id="habitad"  required>
             </div>
             <div class="col-md-6">
                 <label for="type1" class="form-label">Tipo</label>
@@ -44,11 +44,11 @@
             </div>
             <div class="col-md-6">
                 <label for="weight" class="form-label">Peso</label>
-                <input type="text" class="form-control" id="weight" name="weight" >
+                <input type="text" class="form-control" id="weight" name="weight"  required>
             </div>
             <div class="col-md-6">
                 <label for="height" class="form-label">Altura</label>
-                <input type="text" class="form-control" id="height" name="height">
+                <input type="text" class="form-control" id="height" name="height" required>
             </div>
             
             <div class="col-12">

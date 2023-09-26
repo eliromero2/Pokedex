@@ -14,12 +14,24 @@ if (!isset($_SESSION["usuario"])) {
     exit;
 }
 
-
 ?>
 
 <div class="container">
     <h2 class="my-3"><?php echo "Bienvenido " . $_SESSION["usuario"]  .  "!"; ?></h2>
     <?php include_once 'components/search.php' ?>
+
+    <?php if (isset($_SESSION['deletePokemon']) || isset($_SESSION['updatePokemon']) || isset($_SESSION['createPokemon'])): ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <?php if (isset($_SESSION['deletePokemon'])): ?>
+      <?php echo $_SESSION['deletePokemon']; unset($_SESSION['deletePokemon']); ?>
+    <?php elseif (isset($_SESSION['updatePokemon'])): ?>
+      <?php echo $_SESSION['updatePokemon']; unset($_SESSION['updatePokemon']);?>
+    <?php elseif (isset($_SESSION['createPokemon'])): ?>
+      <?php echo $_SESSION['createPokemon']; unset($_SESSION['createPokemon']); ?>
+    <?php endif; ?>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<?php endif; ?>
 
 
 <a href="/Pokedex/create.php" class="btn btn-info shadow p-3 mb-5 bg-body-tertiary rounded">Agregar Pokemon</a>
