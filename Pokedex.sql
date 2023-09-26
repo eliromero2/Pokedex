@@ -13,7 +13,7 @@ CREATE TABLE `pokemon` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-INSERT INTO `pokemon` VALUES (1,123,'imagenes/pikachu.jpg','Pikachu','Eléctrico','                Pikachu almacena una gran cantidad de electricidad en sus mejillas. Estas parecen cargarse eléctricamente durante la noche mientras duerme.\r\n																																					Las mejillas de Pikachu también pueden ser recargadas mediante una descarga eléctrica, como se ha podido observar en algunos episodios del anime.            ','Electricidad estatica',0.4,6,'Bosque'),(2,4,'imagenes/Charmander.jpg','Charmander','Fuego','                Lagartija con fuegito            ','Prender velas',0.4,6,'Chimenea'),(3,124,'imagenes/Eevee.jpg','Eevee','Fuego','Un perrito copado',NULL,1,1,'Bosque');
+INSERT INTO `pokemon` VALUES (2,4,'imagenes/Charmander.jpg','Charmander','Fuego','                Lagartija con fuegito            ','Prender velas',0.4,6,'Chimenea'),(3,124,'imagenes/Eevee.jpg','Eevee','Agua','                Un perrito copado            ',NULL,1,1,'Bosque'),(8,123,'imagenes/Bulbasaur.jpg.jpg','Tomas Gomez','Fuego','asdasdasd',NULL,1,1,'Bosque');
 
 
 -- USERS
@@ -27,3 +27,5 @@ CREATE TABLE `users` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `users` VALUES (1,'admin','0192023a7bbd73250516f069df18b500');
